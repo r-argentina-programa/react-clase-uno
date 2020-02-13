@@ -2,6 +2,13 @@ import { Welcome } from './components/Welcome.js';
 
 ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app'));
 
+// import { Button } from './components/Button.js';
+
+// ReactDOM.render(
+//   <Button onClick={event => alert(event.target.value)}>Hacé click!</Button>,
+//   document.getElementById('react-app')
+// );
+
 // import { Page } from './components/Page.js';
 
 // ReactDOM.render(

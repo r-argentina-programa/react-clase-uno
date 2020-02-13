@@ -17,7 +17,7 @@
 
 .article {
   border-radius: 5px;
-  background: lightblue;
+  background: lightyellow;
   padding: 10px;
 }
 
@@ -40,4 +40,62 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.tarjeta {
+  display: flex;
+  padding: 10px;
+  border-radius: 5px;
+  background: lightblue;
+}
+
+.tarjeta-img {
+  border-radius: 50%;
+  height: 50px;
+}
+
+.tarjeta-data {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.tarjeta-data-header {
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.input {
+  border-radius: 5px;
+  border-style: none;
+  padding: 5px;
+  background: lightblue;
+}
+
+.input-match {
+  background: lightcoral;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-right: 50px;
+}
+
+.post-paragraph {
+  max-width: 400px;
+  font-size: 20px;
 }
