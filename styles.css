@@ -1,101 +1,109 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+	font-family: 'Open Sans', sans-serif !important;
+}
+
 .button {
-  border: 1px solid lightgray;
-  border-radius: 5px;
-  padding: 10px;
-  font: arial;
-  outline: none;
-  transition: all 0.2s ease-in-out;
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	padding: 10px;
+	font: arial;
+	outline: none;
+	transition: all 0.2s ease-in-out;
 }
 
 .button-blue {
-  background: lightblue;
+	background: #228be6;
 }
 
 .button-white {
-  background: white;
+	background: white;
 }
 
 .article {
-  border-radius: 5px;
-  background: lightyellow;
-  padding: 10px;
+	border-radius: 5px;
+	background: lightyellow;
+	padding: 10px;
 }
 
 .article-header {
-  font-size: 20px;
-  font-weight: 700;
+	font-size: 20px;
+	font-weight: 700;
 }
 
 .articles-list {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 .articles-list-item {
-  margin-bottom: 40px;
+	margin-bottom: 40px;
 }
 
 .main-page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .tarjeta {
-  display: flex;
-  padding: 10px;
-  border-radius: 5px;
-  background: lightblue;
+	display: flex;
+	padding: 15px;
+	border-radius: 8px;
+	background: #228be6;
+	color: #ffffff;
 }
 
 .tarjeta-img {
-  border-radius: 50%;
-  height: 50px;
+	border: solid 2px #ffffff;
+	border-radius: 50%;
+	height: 50px;
 }
 
 .tarjeta-data {
-  display: flex;
-  flex-direction: column;
-  margin-left: 20px;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
 }
 
 .tarjeta-data-header {
-  font-weight: 800;
-  font-size: 24px;
+	font-weight: 800;
+	font-size: 24px;
 }
 
 .input {
-  border-radius: 5px;
-  border-style: none;
-  padding: 5px;
-  background: lightblue;
+	border-radius: 5px;
+	border-style: none;
+	padding: 5px;
+	background: #228be6;
 }
 
 .input-match {
-  background: lightcoral;
+	background: lightcoral;
 }
 
 .post {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 .post-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .post-title {
-  font-size: 48px;
-  font-weight: 800;
-  margin-right: 50px;
+	font-size: 48px;
+	font-weight: 800;
+	margin-right: 50px;
 }
 
 .post-paragraph {
-  max-width: 400px;
-  font-size: 20px;
+	max-width: 400px;
+	font-size: 20px;
 }
