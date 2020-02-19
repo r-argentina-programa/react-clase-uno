@@ -1,3 +1,4 @@
+
 /*
  * Este componente debe renderizar un input que cambie de clase cuando contiene tu nombre.
  * Recibirá una prop: nombre (un string con tu nombre).
@@ -12,7 +13,24 @@
  * Para obtener el valor del input en el event handler, deberán usar la propiedad `event.target.value`.
  */
 
-export function MatchNombre(props) {}
+function Input(props) {
+  return <input type={props.type} className={'input' + (props.className || '')} onChange={props.onChange} />;
+}
+
+export function MatchNombre(props) {
+  const nombre = props.name;
+  const [addClass, setClassName] = React.useState(false);
+  return (
+    <Input
+      onChange={(e) => {
+        (e.target.value === nombre) && setClassName(true)
+      }}
+      className={addClass ? ' input-match' : ''}
+    />
+  );
+}
+
+// event.target.value == props.nombre ? console.log('classname change') : console.log(Boolean(event.target.value == props.nombre), event.target.value, props.nombre)
 
 /*
  * Componentes como este son usados a menudo para hacer validaciones de inputs
@@ -32,8 +50,39 @@ export function MatchNombre(props) {}
  * Si hicieron todo bien, el input se pondrá rojo si no pasaron el tamaño mínimo de la contraseña.
  */
 
-export function PasswordInput(props) {}
 
+
+export function PasswordInput(props) {
+  let data = { ...props }
+  data.isPassword = true
+  const [retainClass, setRemoveClass] = React.useState(true);
+  return (
+    <Input
+      type="password"
+      onChange={(e) => {
+        data.e = e.target.value
+        ValidationInput(data) ? setRemoveClass(false) : setRemoveClass(true)
+      }}
+      className={retainClass ? ' input-match' : ''}
+    />
+  );
+}
+
+
+/*
+export function PasswordInput(props) {
+  const [retainClass, setRemoveClass] = React.useState(true);
+  return (
+   <input
+      type="password"
+      onChange={(e) => {
+        (props.length < e.target.value.length) ? setRemoveClass(false) : setRemoveClass(true)
+      }}
+      className={retainClass ? 'input input-match' : 'input'}
+    />
+  );
+}
+*/
 /*
  * Estos componentes están bastante buenos, pero estamos repitiendo mucho código,
  * son prácticamente iguales salvo por un par de diferencias.
@@ -60,4 +109,24 @@ export function PasswordInput(props) {}
  * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input deberá tener type="password".
  */
 
-export function ValidationInput(props) {}
+export function ValidationInput(props) {
+  const isPassword = props.isPassword
+  const isMail = props.isMail
+
+  if (isPassword) {
+    if ((props.length < props.e.length) && !props.e.match(" ")) {
+      return true
+    } else {
+      return false
+    }
+  }
+  if(isMail){
+    const regEx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if(value.match(regEx) && !props.e.match(" ")){
+      return true
+    } else {
+      return false
+    }
+  }
+}
+

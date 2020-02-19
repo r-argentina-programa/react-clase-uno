@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "compiler": "babel --watch src --out-dir lib --presets react-app/prod",
-    "server": "http-server -c-1"
+    "server": "http-server -c-1",
+    "eslint": "eslint"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,13 @@
     "http-server": "^0.12.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.3",
+    "eslint-plugin-react-hooks": "^1.7.0"
   }
 }

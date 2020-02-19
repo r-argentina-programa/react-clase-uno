@@ -34,7 +34,7 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta(props) {}
+//export function Tarjeta(props) {}
 
 /*
  * El esqueleto de este componente será nuestro primer post en un blog.
@@ -93,7 +93,7 @@ Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
 />
 
  */
-
+/*
 export function BlogPost(props) {
   return (
     <article className="post">
@@ -112,3 +112,51 @@ export function BlogPost(props) {
     </article>
   );
 }
+*/
+export function Tarjeta(props) {
+  return <div className="tarjeta">
+    <img
+      src={props.imagen}
+      alt="Foto de perfil"
+      className="tarjeta-img"
+    />
+    <div className="tarjeta-data">
+      <header className="tarjeta-data-header">{props.nombre}</header>
+      <span>{props.titulo}</span>
+    </div>
+  </div>
+}
+
+export function BlogPost(props) {
+  const parrafos = props.parrafos.split('\n')
+  return (
+    <article className="post">
+      <header className="post-header">
+        <h2 className="post-title">{props.titulo}</h2>
+        <Tarjeta {...autor}/>
+      </header>
+        {parrafos.map((parrafo)=>(
+          <p key={parrafo} className="post-paragraph"> {parrafo}</p>
+        ))}
+    </article>
+  );
+}
+class Autor {
+  constructor(nombre, titulo, imagen) {
+    this.nombre = nombre
+    this.titulo = titulo
+    this.imagen = imagen
+    this.articles = []
+  }
+  addArticle(article){
+    this.articles.push(article)
+  }
+} 
+
+ const autor = new Autor(
+  "Julián Bovone", 
+  "Programador Full Stack Trainee",
+  "https://ca.slack-edge.com/TNG5KKB2P-UREJZAZ2R-63323c056cea-512"
+)
+
+
