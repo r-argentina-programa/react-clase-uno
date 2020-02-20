@@ -1,7 +1,7 @@
 // import React from 'react';
 // import ReactDOM from 'react-dom';
-import Tarjeta from './components/Tarjeta.js';
 import BlogPost from './components/BlogPost.js';
+import MatchNombre from './components/MatchNombre.js';
 
 ReactDOM.render(
 	<div>
@@ -11,11 +11,12 @@ ReactDOM.render(
 La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y encima andaba siempre en cuatro patas, moviendo la cola.
 Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
 			autor={{
-				nombre: 'Nacho C',
+				nombre: 'Nacho',
 				titulo: 'Frontend Dev Jr',
 				imagen: 'https://ca.slack-edge.com/TNG5KKB2P-UNWP3HYKY-0b015efda2a9-512'
 			}}
 		/>
+		<MatchNombre />
 	</div>,
 	document.getElementById('react-app')
 );
