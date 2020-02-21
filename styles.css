@@ -77,11 +77,14 @@
 	border-radius: 5px;
 	border-style: none;
 	padding: 5px;
-	background: #228be6;
+	border: solid 2px #ed1b24;
 }
 
 .input-match {
-	background: lightcoral;
+	border-radius: 5px;
+	border-style: none;
+	padding: 5px;
+	border: solid 2px #23b14d;
 }
 
 .post {
