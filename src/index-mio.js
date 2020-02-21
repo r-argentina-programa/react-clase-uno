@@ -18,8 +18,8 @@ O tal vez un gato...`}
 			}}
 		/>
 		<MatchNombre nombre="nacho" placeholder="Usuario" />
-		<PasswordInput minLength="5" placeholder="Contraseña" />
-		<ValidationInput placeholder="Validation" validation={} isPassword={true} />
+		<PasswordInput minLength="6" placeholder="Contraseña" />
+		<ValidationInput  isPassword={false} />
 	</div>,
 	document.getElementById('react-app')
 );
