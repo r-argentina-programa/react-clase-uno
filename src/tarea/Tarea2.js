@@ -1,3 +1,5 @@
+import React, {useState} from 'react'
+
 /*
  * Este componente debe renderizar un input que cambie de clase cuando contiene tu nombre.
  * Recibirá una prop: nombre (un string con tu nombre).
@@ -12,7 +14,21 @@
  * Para obtener el valor del input en el event handler, deberán usar la propiedad `event.target.value`.
  */
 
-export function MatchNombre(props) {}
+export function MatchNombre(props) {
+    const [value,setValue] = useState("")
+    
+    function manageInput(e){
+        let value = e.target.value
+        setValue(value)
+    }
+
+    return(
+        <div>
+        <input onChange={manageInput} value={value} className={value == "Juan" ? "input" : "input input-match"}/>
+    </div>
+    )
+    
+}
 
 /*
  * Componentes como este son usados a menudo para hacer validaciones de inputs
@@ -32,7 +48,21 @@ export function MatchNombre(props) {}
  * Si hicieron todo bien, el input se pondrá rojo si no pasaron el tamaño mínimo de la contraseña.
  */
 
-export function PasswordInput(props) {}
+export function PasswordInput(props) {
+    const [value,setValue] = useState("")
+    const minLength = 8
+
+    function manageInput(e){
+        let value = e.target.value
+        setValue(value)
+    }
+
+    return(
+        <div>
+        <input type="password" onChange={manageInput} value={value} className={value.length < minLength ? "input input-match" : "input"}/>
+    </div>
+    )
+}
 
 /*
  * Estos componentes están bastante buenos, pero estamos repitiendo mucho código,
@@ -60,4 +90,17 @@ export function PasswordInput(props) {}
  * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input deberá tener type="password".
  */
 
-export function ValidationInput(props) {}
+export function ValidationInput(props) {
+    const [value,setValue] = useState("")
+
+    function manageInput(e){
+        let tValue = e.target.value
+        setValue(tValue)
+    }
+
+    return(
+        <div>
+        <input onChange={manageInput} value={value} className={props.validation(value) ? "input" : "input input-match"}/>
+    </div>
+    )
+}
