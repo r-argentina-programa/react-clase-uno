@@ -112,7 +112,9 @@ Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
  */
 
 export function BlogPost(props) {
-  const parrafos = props.parrafos.split("\n")
+  const parrafos = props.parrafos.split("\n").map(
+    parrafo=><p className="post-paragraph">{parrafo}</p>
+  )
 
   return (
     <article className="post">
@@ -120,15 +122,7 @@ export function BlogPost(props) {
         <h2 className="post-title">{props.titulo}</h2>
         <Tarjeta nombre={props.autor.nombre} titulo={props.autor.titulo} imagen={props.autor.imagen} />
       </header>
-      <p className="post-paragraph">
-        {parrafos[0]}
-      </p>
-      <p className="post-paragraph">
-        {parrafos[1]}
-      </p>
-      <p className="post-paragraph">
-        {parrafos[2]}
-      </p>
+      {parrafos}
     </article>
   );
 }
