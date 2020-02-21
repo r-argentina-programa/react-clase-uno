@@ -11,8 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "babel": "^6.23.0",
-    "babel-cli": "6",
-    "babel-preset-react-app": "3",
+    "babel-cli": "6.26.0",
+    "babel-preset-react-app": "9.1.1",
     "http-server": "^0.12.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
