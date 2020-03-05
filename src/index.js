@@ -1,6 +1,6 @@
-import { Welcome } from './components/Welcome.js';
+// import { Welcome } from './components/Welcome.js';
 
-ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app'));
+// ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app'));
 
 // import { Button } from './components/Button.js';
 
@@ -29,3 +29,7 @@ ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app
 // import { ToDoList } from './components/ToDoList.js';
 
 // ReactDOM.render(<ToDoList />, document.getElementById('react-app'));
+
+import Tareas from './tarea/Tareas.js';
+
+ReactDOM.render(<Tareas />, document.getElementById('react-app'));
