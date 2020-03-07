@@ -10,7 +10,7 @@ export function ControlledCheckbox(props) {
   return (
     <React.Fragment>
       <label>{props.name}</label>
-      <input type="checkbox" checked={props.value} onChange={() => props.onChange(!props.value)} />
+      <input type="checkbox" checked={props.value} onChange={props.onChange} />
     </React.Fragment>
   );
 }
@@ -46,8 +46,8 @@ export function CheckboxListWithState(props) {
           key={name}
           name={name}
           value={value}
-          onChange={newValue => {
-            setCheckboxes({ ...checkboxes, [name]: newValue });
+          onChange={() => {
+            setCheckboxes({ ...checkboxes, [name]: !value });
           }}
         />
       ))}
