@@ -26,7 +26,7 @@ Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
       {/* Tarea 2 */}
       <MatchNombre nombre="julian" />
       <PasswordInput minLength={8} />
-      <ValidationInput validation={value => value === 'Tarea 2'} />
+      <ValidationInput validation={value => !value.match(' ')} />
       {/* Tarea 3 */}
       <CheckboxList
         items={{

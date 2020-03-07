@@ -86,7 +86,7 @@ export function ValidationInput(props) {
 
   return (
     <input
-      className={'input ' + (props.validation(value) && 'input-match')}
+      className={'input ' + (!props.validation(value) && 'input-match')}
       type={props.isPassword ? 'password' : 'text'}
       value={value}
       onChange={event => setValue(event.target.value)}

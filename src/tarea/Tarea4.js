@@ -51,6 +51,10 @@ export function CheckboxListWithState(props) {
           }}
         />
       ))}
+      {/* Ejemplo mostrado en la corrección en clase 2 */}
+      <button onClick={() => setCheckboxes({ ...checkboxes, uno: !checkboxes.uno })}>
+        cambiar uno
+      </button>
     </div>
   );
 }
