@@ -20,11 +20,11 @@ Sí. Nuestro http-server está mostrando toda la carpeta detrás de `localhost` 
 
 ### Qué son esas dependencias de babel?
 
-Babel es nuestro compilador y requiere 3 dependencias: `babel`, `babel-cli` y `babel-preset-react-app`.
+Babel es nuestro compilador y requiere 3 dependencias: `@babel/cli`, `@babel/core` y `@babel/preset-react`.
 
-- `babel` es el código del compilador
-- `babel-cli` es la herramienta que nos permite llamarlo desde la consola
-- `babel-preset-react-app` son las instrucciones que babel requiere para compilar JSX
+- `@babel/core` es el código del compilador
+- `@babel/cli` es la herramienta que nos permite llamarlo desde la consola
+- `@babel/preset-react` son las instrucciones que babel requiere para compilar JSX
 
 ### Qué hace exactamente `npm i`?
 
