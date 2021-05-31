@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compiler": "babel --watch src --out-dir lib --presets react-app/prod",
+    "compiler": "babel --watch src --out-dir lib --presets @babel/preset-react",
     "server": "http-server -c-1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel": "^6.23.0",
-    "babel-cli": "6",
+    "@babel/cli": "^7.14.0",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-react": "^7.13.13",
     "babel-preset-react-app": "3",
     "http-server": "^0.12.1",
     "react": "^16.12.0",
