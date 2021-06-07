@@ -134,7 +134,7 @@ export function BlogPost(props) {
     <article className="post">
       <header className="post-header">
         <h2 className="post-title">{props.titulo}</h2>
-        <Tarjeta nombre={props.autor.nombre} titulo={props.autor.titulo} imagen={props.autor.urlImagen} />
+        <Tarjeta nombre={props.autor.nombre} titulo={props.autor.titulo} urlImagen={props.autor.urlImagen} />
       </header>
       <React.Fragment>
         {props.parrafos}
