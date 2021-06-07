@@ -34,7 +34,24 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta(props) {}
+
+export function Tarjeta(props) {
+  return (
+    <React.Fragment>
+    <div className="tarjeta">
+      <img
+        src={props.urlImagen}
+        alt="Foto de perfil"
+        className="tarjeta-img"
+      />
+      <div className="tarjeta-data">
+        <header className="tarjeta-data-header">{props.nombre}</header>
+        <span>{props.titulo}</span>
+      </div>
+    </div>
+    </React.Fragment>
+  )
+}
 
 /*
  * El esqueleto de este componente será nuestro primer post en un blog.
@@ -94,21 +111,39 @@ Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
 
  */
 
+export const autor = {
+  nombre: 'Sergio',
+  titulo: 'Estudiante de JavaScript',
+  urlImagen: 'https://avatars.githubusercontent.com/u/55900410?v=4'
+}
+
+const texto = 'Muchas veces me he preguntado cuál es la diferencia entre un perro y una ardilla. \n A primeras pareciera que la diferencia es obvia, casi ridícula; yo tambián lo pensaba, hasta que realicé un anélisis detenido sobre estas criaturas. \n Ambos animales tienen dientes, cola y son peludos. \n Creo que debería continuar el estudio de estas fascinantes criaturas, después de todo, si a Juli le gustan las ardillas, por algo debe ser.';
+
+export const textoEnParrafos = 
+  texto.split('\n').map((parrafo, i) => {
+    return (
+      <p className="post-paragraph" key={`Parrafo ${i+1}`}>{parrafo}</p>
+    )
+  })
+
 export function BlogPost(props) {
   return (
     <article className="post">
       <header className="post-header">
-        <h2 className="post-title">Ardillas</h2>
-        <Tarjeta nombre="Tu nombre" titulo="Tu titulo" imagen="URL de tu imagen" />
+        <h2 className="post-title">{props.titulo}</h2>
+        <Tarjeta nombre={props.autor.nombre} titulo={props.autor.titulo} imagen={props.autor.urlImagen} />
       </header>
-      <p className="post-paragraph">Hoy vi una ardilla.</p>
+      <React.Fragment>
+        {props.parrafos}
+      </React.Fragment>
+      {/* <p className="post-paragraph">Hoy vi una ardilla.</p>
       <p className="post-paragraph">
         La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y
         encima andaba siempre en cuatro patas, moviendo la cola.
       </p>
       <p className="post-paragraph">
         Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.
-      </p>
+      </p> */}
     </article>
   );
 }
