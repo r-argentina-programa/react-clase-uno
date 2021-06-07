@@ -34,6 +34,9 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
+//import React from "react"
+
+
 
 export function Tarjeta(props) {
   return (
