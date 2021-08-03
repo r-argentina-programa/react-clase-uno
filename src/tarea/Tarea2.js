@@ -18,12 +18,13 @@ export function MatchNombre(props) {
     return(
         <div className="input-container"> 
             <input 
+                key='input'
                 type="text"
-                className={(props.nombre === props.value) ? 'input input-match':'input'} 
+                className= {'input ' + ((props.nombre === value) ? 'input-match' : '')}
                 nombre={props.nombre} 
                 value = {props.value}
                 onChange={e => {
-                    setValue({value: e.target.value });
+                    setValue(e.target.value);
                 }}
             />
         </div>
