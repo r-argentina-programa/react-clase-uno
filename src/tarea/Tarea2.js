@@ -13,26 +13,26 @@
  */
 
 
-export function MatchNombre(props) {
-    const [value, setValue] = React.useState('')
-    return(
-        <div className="input-container"> 
-            <input 
-                key='input'
-                type="text"
-                className= {'input ' + ((props.nombre === value) ? 'input-match' : '')}
-                nombre={props.nombre} 
-                value = {props.value}
-                onChange={e => {
-                    setValue(e.target.value);
-                }}
-            />
-        </div>
+// export function MatchNombre(props) {
+//     const [value, setValue] = React.useState('')
+//     return(
+//         <div className="input-container"> 
+//             <input 
+//                 key='input'
+//                 type="text"
+//                 className= {'input ' + ((props.nombre === value) ? 'input-match' : '')}
+//                 nombre={props.nombre} 
+//                 value = {props.value}
+//                 onChange={e => {
+//                     setValue(e.target.value);
+//                 }}
+//             />
+//         </div>
 
 
 
-    )
-}
+//     )
+// }
 
 /*
  * Componentes como este son usados a menudo para hacer validaciones de inputs
@@ -52,7 +52,23 @@ export function MatchNombre(props) {
  * Si hicieron todo bien, el input se pondrá rojo si no pasaron el tamaño mínimo de la contraseña.
  */
 
-export function PasswordInput(props) {}
+// export function PasswordInput(props) {
+//     const [value, setValue] = React.useState('')
+//     return(
+//         <div className="input-container"> 
+//             <input 
+//                 key='input'
+//                 type="password"
+//                 className= {'input ' + ((props.minLength < value.length) ? '' : 'input-match')}
+//                 minLength={props.minLength} 
+//                 onChange={e => {
+//                     setValue(e.target.value);
+//                 }}
+//             />
+//         </div>
+//     )
+
+// }
 
 /*
  * Estos componentes están bastante buenos, pero estamos repitiendo mucho código,
@@ -80,4 +96,22 @@ export function PasswordInput(props) {}
  * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input deberá tener type="password".
  */
 
-export function ValidationInput(props) {}
+export function ValidationInput(props) {
+    const [value, setValue] = React.useState('')
+    return(
+        <div className="input-container"> 
+            <input 
+                            // {((value.length) >= 8) ? 'true':'false'}
+                validation={String(value.length >= 8)}
+                className={((props.validation ===  'false') ? 'input' : 'input input-match')}
+                onChange={e => {
+                    setValue(e.target.value);
+                    
+                }}
+                valueis={value.length}
+            />
+        </div>
+
+    )
+
+}

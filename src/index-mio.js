@@ -31,12 +31,42 @@
 // );
 
 
-import { MatchNombre } from './tarea/Tarea2.js';
+// import { MatchNombre } from './tarea/Tarea2.js';
+
+// ReactDOM.render(
+//   <MatchNombre 
+//     minLength='Tomas'
+     
+//   />, 
+//   document.getElementById("react-app")
+// )
+
+// import { PasswordInput } from './tarea/Tarea2.js';
+
+// ReactDOM.render(
+//   <PasswordInput 
+//     minLength={5}
+     
+//   />, 
+//   document.getElementById("react-app")
+
+// )
+
+import { ValidationInput } from './tarea/Tarea2.js';
 
 ReactDOM.render(
-  <MatchNombre 
-    nombre='Tomas'
-     
+  <ValidationInput
+    
   />, 
   document.getElementById("react-app")
 )
+
+// import { UncontrolledCheckbox } from './tarea/Tarea3.js';
+
+// ReactDOM.render(
+//   <UncontrolledCheckbox
+
+//   />, 
+//   document.getElementById("react-app")
+// )
+

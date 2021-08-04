@@ -2,14 +2,27 @@
  * Este componente debe renderizar un checkbox (<input type="checkbox" />) que se seleccione o des-seleccione al hacer click.
  * Debe tener su propio estado (una variable de tipo booleano que indique si el componente está seleccionado o no)
  * Recibirá dos props: name e initialValue.
+ * 
  * name indica el nombre del checkbox, será un string que debe ser renderizado a su lado.
+ * 
  * initialValue es un booleano que indica el valor inicial del checkbox.
+ * 
  * onChange es una función que se debe disparar cuando el checkbox se selecciona (o des-selecciona), y debe tener como parámetro el valor nuevo del checkbox.
  *
  * DATO: la prop que define si un <input type="checkbox" /> está seleccionado es "checked"
  */
 
-export function UncontrolledCheckbox(props) {}
+export function UncontrolledCheckbox(props) {
+    const [value, setValue] = React.useState('')
+    return(<input 
+                type="checkbox"
+                name='checkbox'
+                initialValue={setValue('false')}
+                onChange={ e => setValue(value === 'false' ? 'true' : 'false' )}
+
+
+    />)
+}
 
 /*
  * Este componente debe renderizar una lista de componentes UncontrolledCheckbox.
