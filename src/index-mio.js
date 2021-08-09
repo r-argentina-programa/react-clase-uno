@@ -55,9 +55,7 @@
 import { ValidationInput } from './tarea/Tarea2.js';
 
 ReactDOM.render(
-  <ValidationInput
-    
-  />, 
+  <ValidationInput/>, 
   document.getElementById("react-app")
 )
 

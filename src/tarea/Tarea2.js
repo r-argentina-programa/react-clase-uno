@@ -13,6 +13,10 @@
  */
 
 
+
+
+
+
 // export function MatchNombre(props) {
 //     const [value, setValue] = React.useState('')
 //     return(
@@ -97,18 +101,22 @@
  */
 
 export function ValidationInput(props) {
+
     const [value, setValue] = React.useState('')
+
+    function validation(value) {
+        return value.length >= 8
+    }
+
     return(
         <div className="input-container"> 
             <input 
-                            // {((value.length) >= 8) ? 'true':'false'}
-                validation={String(value.length >= 8)}
-                className={((props.validation ===  'false') ? 'input' : 'input input-match')}
+
+            
+                className={'input ' + (validation(value) ? '' : 'input-match')}
                 onChange={e => {
-                    setValue(e.target.value);
-                    
+                    setValue(e.target.value);     
                 }}
-                valueis={value.length}
             />
         </div>
 
