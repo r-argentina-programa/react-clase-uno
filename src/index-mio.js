@@ -52,19 +52,60 @@
 
 // )
 
-import { ValidationInput } from './tarea/Tarea2.js';
+// import { ValidationInput } from './tarea/Tarea2.js';
 
-ReactDOM.render(
-  <ValidationInput/>, 
-  document.getElementById("react-app")
-)
+// ReactDOM.render(
+//   <ValidationInput/>, 
+//   document.getElementById("react-app")
+// )
 
 // import { UncontrolledCheckbox } from './tarea/Tarea3.js';
 
 // ReactDOM.render(
-//   <UncontrolledCheckbox
+//   <UncontrolledCheckbox 
+//     name="checkbox"
+//     initialvalue={false}
+//   />, 
+//   document.getElementById("react-app")
+// )
+
+// import { CheckboxList } from './tarea/Tarea3.js';
+
+// ReactDOM.render(
+//   <CheckboxList items={{
+//                   uno: false,
+//                   dos: true,
+//                   tres: false
+//                  }} 
+//   />, 
+//   document.getElementById("react-app")
+// )
+
+import { ControlledCheckbox } from './tarea/Tarea4.js';
+
+// ReactDOM.render(
+//   <ControlledCheckbox 
+//     name="checkbox"
+//     value={false}
+//     onChange={(e) => {
+//       return e.target.checked
+//     } }
 
 //   />, 
 //   document.getElementById("react-app")
 // )
+
+
+import { CheckboxListWithState } from './tarea/Tarea4.js';
+
+ReactDOM.render(
+  <CheckboxListWithState items={{
+       uno: false,
+       dos: true,
+       tres: false,
+  }}
+
+  />, 
+  document.getElementById("react-app")
+)
 
