@@ -2,14 +2,39 @@
  * Este componente debe renderizar un checkbox (<input type="checkbox" />) que se seleccione o des-seleccione al hacer click.
  * Debe tener su propio estado (una variable de tipo booleano que indique si el componente está seleccionado o no)
  * Recibirá dos props: name e initialValue.
+ * 
  * name indica el nombre del checkbox, será un string que debe ser renderizado a su lado.
+ * 
  * initialValue es un booleano que indica el valor inicial del checkbox.
+ * 
  * onChange es una función que se debe disparar cuando el checkbox se selecciona (o des-selecciona), y debe tener como parámetro el valor nuevo del checkbox.
  *
  * DATO: la prop que define si un <input type="checkbox" /> está seleccionado es "checked"
  */
 
-export function UncontrolledCheckbox(props) {}
+export function UncontrolledCheckbox(props) {
+    const [value, setValue] = React.useState(props.initialvalue)
+    return(
+            <div className='input-container'>
+                <input 
+                    type='checkbox'
+                    name={props.name}
+                    initialvalue={props.initialvalue}
+                    onChange={ () => {
+                        setValue(!value)              
+                        }
+                        
+                    }
+                    checked={value}
+                />
+                <p>
+                  {props.name}  
+                </p>
+            </div>
+            )
+}
+
+
 
 /*
  * Este componente debe renderizar una lista de componentes UncontrolledCheckbox.
@@ -24,4 +49,19 @@ export function UncontrolledCheckbox(props) {}
  * debe renderizar tres checkboxes, con nombres "uno", "dos" y "tres", que inicien con valores false, true y false respectivamente.
  */
 
-export function CheckboxList(props) {}
+export function CheckboxList(props) {
+    const items = props.items
+    return(
+        <div>
+                        {Object.keys(items).map((key) => {
+                return (
+                        
+                        
+                        <UncontrolledCheckbox name={key} initialvalue={items[key]} />
+
+                       )
+            })}
+        </div>
+    )
+}            
+

@@ -34,7 +34,21 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta(props) {}
+export function Tarjeta(props) {
+  return (
+    <div className="tarjeta">
+      <img
+        src={props.imagen}
+        alt={props.nombre}
+        className="tarjeta-img"
+      />
+      <div className="tarjeta-data">
+        <header className="tarjeta-data-header">{props.nombre}</header>
+        <span>{props.titulo}</span>
+      </div>
+    </div>
+  );
+}
 
 /*
  * El esqueleto de este componente será nuestro primer post en un blog.
@@ -99,16 +113,11 @@ export function BlogPost(props) {
     <article className="post">
       <header className="post-header">
         <h2 className="post-title">Ardillas</h2>
-        <Tarjeta nombre="Tu nombre" titulo="Tu titulo" imagen="URL de tu imagen" />
+        <Tarjeta nombre={props.autor.nombre} titulo={props.autor.titulo} imagen={props.autor.imagen} />
       </header>
-      <p className="post-paragraph">Hoy vi una ardilla.</p>
-      <p className="post-paragraph">
-        La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y
-        encima andaba siempre en cuatro patas, moviendo la cola.
-      </p>
-      <p className="post-paragraph">
-        Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.
-      </p>
+      <p className="post-paragraph">{props.parrafos[0]}</p>
+      <p className="post-paragraph">{props.parrafos[1]}</p>
+      <p className="post-paragraph">{props.parrafos[2]}</p>
     </article>
   );
 }
