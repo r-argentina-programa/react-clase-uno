@@ -1,6 +1,6 @@
-import { Welcome } from './components/Welcome.js';
+// import { Welcome } from './components/Welcome.js';
 
-ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app'));
+// ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app'));
 
 // import { Button } from './components/Button.js';
 
@@ -29,3 +29,16 @@ ReactDOM.render(<Welcome nombre="Julián" />, document.getElementById('react-app
 // import { ToDoList } from './components/ToDoList.js';
 
 // ReactDOM.render(<ToDoList />, document.getElementById('react-app'));
+
+import {BlogPost} from './tarea/Tarea1.js'
+
+ReactDOM.render(<BlogPost 
+  paragraphs={['Ardilla',
+  'Mi ardilla se llama Atilio',
+  'Le gusta comer bellotas.']}
+  author={{
+    name:'Mauricio',
+    description:'Programador Front End',
+    img: 'https://avatars.githubusercontent.com/u/65625400?v=4'
+  }}
+/>, document.querySelector('#react-app'));
