@@ -51,6 +51,6 @@
 
 // ReactDOM.render(<PasswordInput minLength={6}/>, document.querySelector('#react-app'))
 
-import { ValidationInput } from "./tarea/Tarea2.js";
+import { CheckboxList } from "./tarea/Tarea3.js";
 
-ReactDOM.render(<ValidationInput isPassword={true} validation={(value) => value.length >= 8}/>, document.querySelector('#react-app'))
+ReactDOM.render(<CheckboxList items={{ uno: false, dos: true, tres: false }}/>, document.querySelector('#react-app'))
