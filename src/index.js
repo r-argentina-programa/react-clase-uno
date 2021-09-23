@@ -30,15 +30,27 @@
 
 // ReactDOM.render(<ToDoList />, document.getElementById('react-app'));
 
-import {BlogPost} from './tarea/Tarea1.js'
+// import {BlogPost} from './tarea/Tarea1.js'
 
-ReactDOM.render(<BlogPost 
-  paragraphs={['Ardilla',
-  'Mi ardilla se llama Atilio',
-  'Le gusta comer bellotas.']}
-  author={{
-    name:'Mauricio',
-    description:'Programador Front End',
-    img: 'https://avatars.githubusercontent.com/u/65625400?v=4'
-  }}
-/>, document.querySelector('#react-app'));
+// ReactDOM.render(<BlogPost 
+//   paragraphs={['Ardilla',
+//   'Mi ardilla se llama Atilio',
+//   'Le gusta comer bellotas.']}
+//   author={{
+//     name:'Mauricio',
+//     description:'Programador Front End',
+//     img: 'https://avatars.githubusercontent.com/u/65625400?v=4'
+//   }}
+// />, document.querySelector('#react-app'));
+
+// import { MatchNombre } from "./tarea/Tarea2.js";
+
+// ReactDOM.render(<MatchNombre nombre='Mauricio'/>, document.querySelector('#react-app'))
+
+// import { PasswordInput } from "./tarea/Tarea2.js";
+
+// ReactDOM.render(<PasswordInput minLength={6}/>, document.querySelector('#react-app'))
+
+import { ValidationInput } from "./tarea/Tarea2.js";
+
+ReactDOM.render(<ValidationInput isPassword={true} validation={(value) => value.length >= 8}/>, document.querySelector('#react-app'))
