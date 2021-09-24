@@ -108,7 +108,7 @@ export function BlogPost(props) {
   return (
     <article className="post">
       <header className="post-header">
-        <h2 className="post-title">abc</h2>
+        <h2 className="post-title">{props.title}</h2>
         <Tarjeta 
         {...props.author}
         />
