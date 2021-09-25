@@ -32,7 +32,8 @@
 
 // import {BlogPost} from './tarea/Tarea1.js'
 
-// ReactDOM.render(<BlogPost 
+// ReactDOM.render(<BlogPost
+//   title='Tarea 1 de React - Clase Uno'
 //   paragraphs={['Ardilla',
 //   'Mi ardilla se llama Atilio',
 //   'Le gusta comer bellotas.']}
@@ -43,14 +44,14 @@
 //   }}
 // />, document.querySelector('#react-app'));
 
-// import { MatchNombre } from "./tarea/Tarea2.js";
+import {MatchName} from './tarea/Tarea2.js'
 
-// ReactDOM.render(<MatchNombre nombre='Mauricio'/>, document.querySelector('#react-app'))
+ReactDOM.render(<MatchName name='Mauricio' value="input-name"/>, document.querySelector('#react-app'))
 
 // import { PasswordInput } from "./tarea/Tarea2.js";
 
 // ReactDOM.render(<PasswordInput minLength={6}/>, document.querySelector('#react-app'))
 
-import { ValidationInput } from "./tarea/Tarea2.js";
+// import {CheckboxListWithState} from './tarea/Tarea4.js'
 
-ReactDOM.render(<ValidationInput isPassword={true} validation={(value) => value.length >= 8}/>, document.querySelector('#react-app'))
+// ReactDOM.render(<CheckboxListWithState items={{uno: false, dos: true, tres: false}}/>, document.querySelector('#react-app'))
