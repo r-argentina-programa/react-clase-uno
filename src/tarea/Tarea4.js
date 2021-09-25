@@ -2,23 +2,35 @@
  * Este componente debe renderizar un checkbox (<input type="checkbox" />).
  * Recibirá tres props: name, value y onChange.
  * name indica el nombre del checkbox, será un string que debe ser renderizado a su lado.
- * value es un booleano que indica el valor del checkbox (true o false según esté o no seleccionado).
+ * value es un booleano que indica el valor del checkbox
+ * (true o false según esté o no seleccionado).
  * onChange es una función que se debe disparar cuando el checkbox se selecciona.
  */
 
-export function ControlledCheckbox(props) {}
+export function ControlledCheckbox(props) {
+  const { name, onChange, value } = props;
+  return (
+    <label htmlFor={name}>
+      {name}
+      <input type="checkbox" checked={value} onChange={onChange} />
+    </label>
+
+  );
+}
 
 /*
  * Este componente debe renderizar una lista de componentes ControlledCheckbox.
  * Debes completar ese componente antes de completar este.
  * Recibirá una prop: items.
- * items es un objeto de forma { [nombre]: [valorInicial] }, que liste todos los checkboxes por ejemplo:
+ * items es un objeto de forma { [nombre]: [valorInicial] }, que
+ *  liste todos los checkboxes por ejemplo:
  * <ControlledCheckboxList items={
  *   uno: false,
  *   dos: true,
  *   tres: false,
  * } />
- * debe renderizar tres checkboxes, con nombres "uno", "dos" y "tres", que inicien con valores false, true y false respectivamente.
+ * debe renderizar tres checkboxes, con nombres "uno", "dos" y "tres",
+ *  que inicien con valores false, true y false respectivamente.
  * Este componente tendrá un solo estado, que tendrá la misma forma que la prop items.
  * La única diferencia es que el estado debe CAMBIAR según se vayan clickeando los checkboxes.
  * Por ejemplo, si hacemos click en "uno", el estado deberá ser:
@@ -28,10 +40,42 @@ export function ControlledCheckbox(props) {}
  *   tres: false,
  * }
  */
+//sacado del branch 'tareas-completas'
+export function CheckboxListWithState(props) {
+  const { items } = props;
+  const [estados, setEstados] = React.useState(items);
+  return (
+    Object.entries(items).map(([key, val]) => (
+      <ControlledCheckbox
+        key={key}
+        name={key}
+        value={val}
+        onChange={() => {
+          setEstados({ ...estados, [key]: !val });
+        }}
+      />
+    ))
+  );
+}
 
-export function CheckboxListWithState(props) {}
-
-/*
+//Como lo hice originalmente
+export function CheckboxListWithState(props) {
+  const { items } = props;
+  const [estados, setEstados] = React.useState(items);
+  return (
+    Object.entries(items).map(([key, val]) => (
+      <ControlledCheckbox
+        key={key}
+        name={key}
+        value={val}
+        onChange={() => {
+          setEstados(Object.keys(estados).map(estado => !estados[estado]) );
+        }}
+      />
+    ))
+  );
+}
+/*= ==================================
  * Para este punto, seguramente hayan notado las palabras "Controlled" y
  * "Uncontrolled" en los componentes que hicieron previamente. Estos términos
  * indican si el componente puede cambiar su valor mediante props.
