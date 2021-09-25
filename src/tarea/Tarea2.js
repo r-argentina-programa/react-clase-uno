@@ -13,10 +13,10 @@
  */
 
 export function MatchName(props) {
-  const [name, setName] = React.useState('')
+  const [name, setName] = React.useState(props.name)
 
   return (
-    <input className={'input ' + (name === props.name ? 'input-match' : '')} onChange={e => setName(e.target.value)}></input>
+    <input name={props.value} className={'input ' + (name === props.name ? 'input-match' : '')} onChange={e => setName(e.target.value)}></input>
     )
 }
 
@@ -42,7 +42,7 @@ export function PasswordInput(props) {
   const [password, setPassword] = React.useState('')
 
   return (
-    <input type="password" className={'input ' + (password >= props.minLength ? '' : 'input-match')} onChange={e => setPassword(e.target.value.length)}></input>
+    <input name={props.value} type="password" className={'input ' + (password >= props.minLength ? '' : 'input-match')} onChange={e => setPassword(e.target.value.length)}></input>
   )
 }
 
@@ -76,6 +76,6 @@ export function ValidationInput(props) {
   const [value, setValue] = React.useState('');
 
   return (
-    <input className={'input ' + (props.validation(value) ? '' : 'input-match')} type={props.isPassword ? 'password' : ''} onChange={e => setValue(e.target.value)}></input>
+    <input name={props.value} className={'input ' + (props.validation(value) ? '' : 'input-match')} type={props.isPassword ? 'password' : ''} onChange={e => setValue(e.target.value)}></input>
   )
 }
