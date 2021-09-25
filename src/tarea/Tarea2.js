@@ -8,11 +8,30 @@
  * Si completaste bien el componente, verás que al escribir una string que contenga tu nombre,
  * el input cambiará de azul a rojo.
  *
- * DATO: usen la prop "value" para setear el nombre del input y "onChange" como event handler para cambiar el estado.
- * Para obtener el valor del input en el event handler, deberán usar la propiedad `event.target.value`.
+ * DATO: usen la prop "value" para setear el nombre del input y "onChange"
+ *  como event handler para cambiar el estado.
+ * Para obtener el valor del input en el event handler, deberán usar la
+ *  propiedad `event.target.value`.
  */
 
-export function MatchNombre(props) {}
+export function MatchNombre(props) {
+  const { nombre } = props;
+  // eslint-disable-next-line no-undef
+  const [contenidoInput, setContenidoInput] = React.useState('');
+  return (
+    <input
+      id="asd"
+      key={nombre}
+      placeholder="Adivina mi nombre"
+      type="text"
+      value={contenidoInput}
+      className={
+        `input${contenidoInput === { nombre } ? ' input-match' : ''}`
+      }
+      onChange={(event) => setContenidoInput(event.target.value)}
+    />
+  );
+}
 
 /*
  * Componentes como este son usados a menudo para hacer validaciones de inputs
@@ -32,7 +51,19 @@ export function MatchNombre(props) {}
  * Si hicieron todo bien, el input se pondrá rojo si no pasaron el tamaño mínimo de la contraseña.
  */
 
-export function PasswordInput(props) {}
+export function PasswordInput(props) {
+  const { minLength } = props;
+  const [inputValue, setInputValue] = React.useState('');
+  return (
+    <>
+      <label htmlFor="pswd">
+        Caracteres actuales:
+        {inputValue.length}
+      </label>
+      <input id="pswd" className={`input ${inputValue.length >= minLength ? '' : 'input-match'}`} value={inputValue} placeholder={`Min length ${minLength}`} type="password" onChange={((event) => setInputValue(event.target.value))} />
+    </>
+  );
+}
 
 /*
  * Estos componentes están bastante buenos, pero estamos repitiendo mucho código,
@@ -54,10 +85,18 @@ export function PasswordInput(props) {}
  * - (value) => !value.match(" ");
  *   Esta función chequea que el input no tenga espacios.
  *
- * - (value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+ * - (value) => value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@
+ * ((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
  *   Esta hermosa regex robada de internet chequea que el input sea una dirección de mail válida.
  *
- * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input deberá tener type="password".
+ * Si quieren, pueden agregar una prop extra "isPassword". Si es true el input
+ *  deberá tener type="password".
  */
 
-export function ValidationInput(props) {}
+export function ValidationInput(props) {
+  const { validation, isPassword } = props;
+  const [value, setValue] = React.useState('');
+  return (
+    <input value={value} className={`input${validation(value) ? '' : ' input-match'}`} type={isPassword ? 'password' : ''} onChange={(event) => setValue(event.target.value)} />
+  );
+}
