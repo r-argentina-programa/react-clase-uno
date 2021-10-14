@@ -1,6 +1,7 @@
 import { Tarjeta , BlogPost } from "./tarea/Tarea1.js";
 import { MatchNombre , PasswordInput, ValidationInput} from "./tarea/Tarea2.js";
 import { CheckboxList } from "./tarea/Tarea3.js";
+import { CheckboxListWithState } from "./tarea/Tarea4.js";
         
 ReactDOM.render(
   <div id="tareas">
@@ -69,6 +70,16 @@ ReactDOM.render(
         Uno: false,
         Dos: true,
         Tres: false
+      }}
+      />
+    </div>
+
+    {/* Tarea 4 */}
+    <div>
+    <CheckboxListWithState items = {{
+        Controlled_Uno: false,
+        Controlled_Dos: true,
+        Controlled_Tres: false
       }}
       />
     </div>
