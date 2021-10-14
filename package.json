@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "compiler": "babel --watch src --out-dir lib --presets @babel/preset-react",
-    "server": "http-server -c-1 -o ./index-mio.html"
+    "server": "http-server -c-1"
   },
   "author": "",
   "license": "ISC",
