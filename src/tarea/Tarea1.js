@@ -34,7 +34,19 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta(props) {}
+export function Tarjeta(props) {
+  return(
+    <div className="tarjeta">
+      <img
+        src={props.imagen} style={{width: props.anchoImagen}}
+      ></img>
+      <div className="tarjeta-data">
+        <header className="tarjeta-data-header">{props.nombre}</header>
+        <span>{props.titulo}</span>
+      </div>
+    </div>
+  )
+}
 
 /*
  * El esqueleto de este componente será nuestro primer post en un blog.
@@ -94,21 +106,24 @@ Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
 
  */
 
+const URL_IMAGEN = "https://ca.slack-edge.com/TNG5KKB2P-UNUNU56CV-a82bbf1c3c9e-48"
+
 export function BlogPost(props) {
   return (
     <article className="post">
       <header className="post-header">
-        <h2 className="post-title">Ardillas</h2>
-        <Tarjeta nombre="Tu nombre" titulo="Tu titulo" imagen="URL de tu imagen" />
+        <h2 className="post-title">{props.titulo}</h2>
+
+        <Tarjeta 
+          nombre="Julián Lannóo" 
+          titulo="Intento de Programador" 
+          imagen={URL_IMAGEN}
+          anchoImagen="20%"
+        />
       </header>
-      <p className="post-paragraph">Hoy vi una ardilla.</p>
-      <p className="post-paragraph">
-        La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y
-        encima andaba siempre en cuatro patas, moviendo la cola.
-      </p>
-      <p className="post-paragraph">
-        Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.
-      </p>
+
+      {props.parrafos.split("\n").map((par, i) => <p className="post-paragraph" key={i}>{par}</p>)}
+
     </article>
   );
 }
