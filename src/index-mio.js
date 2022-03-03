@@ -1,7 +1,7 @@
 
 import { Tarjeta, BlogPost } from "./tarea/Tarea1.js";
 import { MatchNombre, PasswordInput, ValidationInput } from "./tarea/Tarea2.js";
-
+import { CheckboxList, UncontrolledCheckbox } from "./tarea/Tarea3.js";
 
 const reactApp = document.getElementById('react-app')
 
@@ -53,6 +53,18 @@ validation = {(value) => value.length >=8 }
 
 </React.Fragment>, reactApp)
 
+// Tarea 3
+
+
+ReactDOM.render(<React.Fragment>
+
+<CheckboxList
+items={{
+uno: false,
+dos:true,
+tres:false  
+}}/>
+</React.Fragment>,reactApp)
 
 // import { Welcome } from './components/Welcome.js';
 // 
