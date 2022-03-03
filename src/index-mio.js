@@ -1,10 +1,19 @@
-import { Tarjeta, BlogPost } from "./tarea/Tarea1.js";
 
+import { Tarjeta, BlogPost } from "./tarea/Tarea1.js";
+import { MatchNombre, PasswordInput, ValidationInput } from "./tarea/Tarea2.js";
 
 
 const reactApp = document.getElementById('react-app')
 
-ReactDOM.render(<BlogPost
+ReactDOM.render(
+
+<React.Fragment>
+  <Tarjeta
+  imagen='https://avatars.githubusercontent.com/u/71040644?s=96&v=4'
+  nombre='Ana Rodríguez'
+  titulo='Programadora Junior'
+  />
+<BlogPost
     titulo="Ardillas"
     parrafos={`Hoy vi una ardilla.
   La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y encima andaba siempre en cuatro patas, moviendo la cola.
@@ -14,7 +23,36 @@ ReactDOM.render(<BlogPost
         titulo : 'Programadora Junior',
         foto:'https://avatars.githubusercontent.com/u/71040644?s=96&v=4'
     }}
-  />, reactApp )
+  /></React.Fragment>, reactApp );
+
+// Tarea 2
+
+ReactDOM.render(<React.Fragment>
+  <MatchNombre nombre ='Ana'/>
+<PasswordInput minLength = {8} />
+</React.Fragment>, reactApp)
+
+ReactDOM.render(<React.Fragment>
+<ValidationInput 
+tipo='Nombre'
+isPassword = {false}
+validation = {(value) => value === 'Ana Rodríguez'}
+/>
+
+<ValidationInput 
+tipo='Email'
+isPassword = {false}
+validation = {(value) => !value.match(" ") && value.match(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) }
+/>
+
+<ValidationInput 
+tipo='Password'
+isPassword = {true}
+validation = {(value) => value.length >=8 }
+/>
+
+</React.Fragment>, reactApp)
+
 
 // import { Welcome } from './components/Welcome.js';
 // 
