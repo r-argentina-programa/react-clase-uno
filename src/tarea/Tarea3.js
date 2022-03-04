@@ -4,12 +4,23 @@
  * Recibirá dos props: name e initialValue.
  * name indica el nombre del checkbox, será un string que debe ser renderizado a su lado.
  * initialValue es un booleano que indica el valor inicial del checkbox.
- * onChange es una función que se debe disparar cuando el checkbox se selecciona (o des-selecciona), y debe tener como parámetro el valor nuevo del checkbox.
+ * onChange es una función que se debe disparar cuando el checkbox se selecciona (o des-selecciona), 
+ * y debe tener como parámetro el valor nuevo del checkbox.
  *
  * DATO: la prop que define si un <input type="checkbox" /> está seleccionado es "checked"
  */
 
-export function UncontrolledCheckbox(props) {}
+export function UncontrolledCheckbox(props) {
+    const [value,setValue] = React.useState(props.initialValue)
+    return(
+        <label htmlFor={props.nombre}>
+            <input type='checkbox'
+            onChange={e=>{setValue(e.target.checked)}}
+            checked={value}
+/>
+        {props.nombre}</label>
+    )
+}
 
 /*
  * Este componente debe renderizar una lista de componentes UncontrolledCheckbox.
@@ -24,4 +35,18 @@ export function UncontrolledCheckbox(props) {}
  * debe renderizar tres checkboxes, con nombres "uno", "dos" y "tres", que inicien con valores false, true y false respectivamente.
  */
 
-export function CheckboxList(props) {}
+export function CheckboxList(props) {
+    
+const items = props.items;
+return(
+    <ul>
+       {Object.entries(items).map(([key, value], i) =>
+        <li key = {i}>
+        <UncontrolledCheckbox
+            nombre={key}
+            initialValue={value}
+        /></li>)
+        }
+    </ul>)
+
+}
