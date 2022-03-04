@@ -4,7 +4,7 @@ import { MatchNombre, PasswordInput, ValidationInput } from "./tarea/Tarea2.js";
 import { CheckboxList, UncontrolledCheckbox } from "./tarea/Tarea3.js";
 import { CheckboxListWithState } from "./tarea/Tarea4.js";
 
-const reactApp = document.getElementById('react-app')
+
 
 // Tarea 1
 
@@ -26,14 +26,14 @@ ReactDOM.render(
         titulo : 'Programadora Junior',
         foto:'https://avatars.githubusercontent.com/u/71040644?s=96&v=4'
     }}
-  /></React.Fragment>, reactApp );
+  /></React.Fragment>, document.getElementById('react-app1') );
 
 // Tarea 2
 
 ReactDOM.render(<React.Fragment>
   <MatchNombre nombre ='Ana'/>
 <PasswordInput minLength = {8} />
-</React.Fragment>, reactApp)
+</React.Fragment>, document.getElementById('react-app2'))
 
 ReactDOM.render(<React.Fragment>
 <ValidationInput 
@@ -54,7 +54,7 @@ isPassword = {true}
 validation = {(value) => value.length >=8 }
 />
 
-</React.Fragment>, reactApp)
+</React.Fragment>, document.getElementById('react-app3') )
 
 // Tarea 3
 
@@ -70,7 +70,7 @@ ReactDOM.render(<React.Fragment>
   dos:true,
   tres:false  
   }}/>
-  </React.Fragment>,reactApp)
+  </React.Fragment>,document.getElementById('react-app4'))
 
 // Tarea 4
 
@@ -81,4 +81,4 @@ ReactDOM.render(<CheckboxListWithState
     dos:true,
     tres:false
   }}
-  />, reactApp)
+  />, document.getElementById('react-app5'))
