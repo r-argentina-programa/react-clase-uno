@@ -15,7 +15,7 @@ export function ControlledCheckbox(props) {
                 checked={props.value}
                 value={props.value}
                 />
-        {props.name}</label>
+        {props.nombre}</label>
     )
 }
 
