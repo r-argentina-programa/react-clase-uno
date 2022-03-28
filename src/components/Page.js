@@ -15,14 +15,15 @@ function Articles(props) {
   return (
     <React.Fragment>
       <ul className="articles-list">
-        {props.articulos.map(articulo => (
+        {props.articulos.map((articulo) => (
           <li key={articulo.titulo} className="articles-list-item">
             <Article contenido={articulo} />
           </li>
         ))}
       </ul>
       <div className="articles-total">
-        Artículos totales: {cantidadDeArticulos === 0 ? 'Ninguno' : cantidadDeArticulos}
+        Artículos totales:{" "}
+        {cantidadDeArticulos === 0 ? "Ninguno" : cantidadDeArticulos}
       </div>
     </React.Fragment>
   );
