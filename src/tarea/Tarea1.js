@@ -117,7 +117,7 @@ export function BlogPost(props) {
       </header>
       {props.parrafo.split("\n").map((parrafo) => (
         <p key={parrafo} className="post-paragraph">
-          {props.parrafo}
+          {parrafo}
         </p>
       ))}
     </article>
