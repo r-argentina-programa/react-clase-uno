@@ -1,11 +1,18 @@
 import { Welcome } from "./components/Welcome.js";
 import { BlogPost } from "./tarea/Tarea1.js";
 ReactDOM.render(
+<<<<<<< Updated upstream
   // <Welcome nombre="Emmanuel" />,
   <BlogPost
     titulo="Titulo de ejemplo"
     parrafo={`Hoy vi una ardilla.
     La ardilla era negra, era más grande que otras ardillas,tenía muchos dientes grandes y encima andaba siempre en cuatro patas,moviendo la cola. 
+=======
+  <BlogPost
+    titulo="Titulo de ejemplo"
+    parrafo={`Hoy vi una ardilla.
+    La ardilla era negra, era más grande que otras ardillas,tenía muchos dientes grandes y encima andaba siempre en cuatro patas,moviendo la cola.
+>>>>>>> Stashed changes
     Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
     autor={{
       nombre: "Emmanuel Martinez",
