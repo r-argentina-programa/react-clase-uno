@@ -36,4 +36,19 @@ export function UncontrolledCheckbox(props) {
  * debe renderizar tres checkboxes, con nombres "uno", "dos" y "tres", que inicien con valores false, true y false respectivamente.
  */
 
-export function CheckboxList(props) {}
+export function CheckboxList(props) {
+  const items = props.items;
+  return (
+    <React.Fragment>
+      {Object.entries(items).map(([nombre, valorInicial], i) => {
+        return (
+          <UncontrolledCheckbox
+            key={i}
+            name={nombre}
+            initialValue={valorInicial}
+          />
+        );
+      })}
+    </React.Fragment>
+  );
+}
