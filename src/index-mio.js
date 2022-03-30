@@ -1,27 +1,11 @@
-import { Welcome } from "./components/Welcome.js";
-import { BlogPost } from "./tarea/Tarea1.js";
-import { ValidationInput } from "./tarea/Tarea2.js";
+import { CheckboxList } from "./tarea/Tarea3.js";
 ReactDOM.render(
-  // <Welcome nombre="Emmanuel" />,
-  // <BlogPost
-  //   titulo="Titulo de ejemplo"
-  //   parrafo={`Hoy vi una ardilla.
-  //   La ardilla era negra, era más grande que otras ardillas,tenía muchos dientes grandes y encima andaba siempre en cuatro patas,moviendo la cola.
-  //   Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
-  //   autor={{
-  //     nombre: "Emmanuel Martinez",
-  //     titulo: "Junior Frontend Developer",
-  //     imagen:
-  //       "https://pbs.twimg.com/media/Ew19YZxVcAIukRo?format=jpg&name=small",
-  //   }}
-  // />,
-  // <MatchNombre nombre="Emmanuel" />,
-  <ValidationInput
-    validation={(value) =>
-      value.match(
-        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      )
-    }
+  <CheckboxList
+    items={{
+      uno: false,
+      dos: true,
+      tres: false,
+    }}
   />,
   document.getElementById("react-app")
 );
