@@ -1,6 +1,6 @@
-import { CheckboxList } from "./tarea/Tarea3.js";
+import { CheckboxListWithState } from "./tarea/Tarea4.js";
 ReactDOM.render(
-  <CheckboxList
+  <CheckboxListWithState
     items={{
       uno: false,
       dos: true,
