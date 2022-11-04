@@ -34,7 +34,17 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta(props) {}
+export function Tarjeta(props) {
+  return (
+    <React.Fragment>
+      <img src={props.imagen} alt='Foto de perfil' className='tarjeta-img' />
+      <div className='tarjeta-data'>
+        <header className='tarjeta-data-header'>{props.nombre}</header>
+        <span>{props.titulo}</span>
+      </div>
+    </React.Fragment>
+  )
+}
 
 /*
  * El esqueleto de este componente será nuestro primer post en un blog.
@@ -95,20 +105,38 @@ Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.`}
  */
 
 export function BlogPost(props) {
+  function Parrafo(props) {
+    return (
+      <React.Fragment>
+        {props.parrafos.split('\n').map((parrafo, index) => (
+          <p className='post-paragraph' key={index}>
+            {parrafo}
+          </p>
+        ))}
+      </React.Fragment>
+    )
+  }
+
   return (
-    <article className="post">
-      <header className="post-header">
-        <h2 className="post-title">Ardillas</h2>
-        <Tarjeta nombre="Tu nombre" titulo="Tu titulo" imagen="URL de tu imagen" />
+    <article className='post'>
+      <header className='post-header'>
+        <h2 className='post-title'>{props.titulo}</h2>
+        <Tarjeta
+          nombre={...props.nombre}
+          titulo={...props.titulo}
+          imagen={...props.imagen}
+        />
       </header>
-      <p className="post-paragraph">Hoy vi una ardilla.</p>
-      <p className="post-paragraph">
-        La ardilla era negra, era más grande que otras ardillas, tenía muchos dientes grandes y
-        encima andaba siempre en cuatro patas, moviendo la cola.
+      <p className='post-paragraph'>Hoy vi una ardilla.</p>
+      <p className='post-paragraph'>
+        La ardilla era negra, era más grande que otras ardillas, tenía muchos
+        dientes grandes y encima andaba siempre en cuatro patas, moviendo la
+        cola.
       </p>
-      <p className="post-paragraph">
-        Creo que puede haber sido un perro, dado que en Argentina no hay ardillas.
+      <p className='post-paragraph'>
+        Creo que puede haber sido un perro, dado que en Argentina no hay
+        ardillas.
       </p>
     </article>
-  );
+  )
 }
