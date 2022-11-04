@@ -32,9 +32,30 @@
 //   document.getElementById('react-app')
 // )
 
-import { ValidationInput } from './tarea/Tarea2.js'
+// import { ValidationInput } from './tarea/Tarea2.js'
+
+// ReactDOM.render(
+//   <ValidationInput minLength='8' />,
+//   document.getElementById('react-app')
+// )
+
+// ! TAREA 3
+// import { UncontrolledCheckbox } from './tarea/Tarea3.js'
+
+// ReactDOM.render(
+//   <UncontrolledCheckbox name='Heyyyyy' initialValue={false} />,
+//   document.getElementById('react-app')
+// )
+
+import { CheckboxList } from './tarea/Tarea3.js'
 
 ReactDOM.render(
-  <ValidationInput minLength='8' />,
+  <CheckboxList
+    items={{
+      uno: false,
+      dos: true,
+      tres: false
+    }}
+  />,
   document.getElementById('react-app')
 )
