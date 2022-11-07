@@ -12,13 +12,17 @@
 export function UncontrolledCheckbox(props) {
   const [isChecked, setIsChecked] = React.useState(props.initialValue)
 
+  function handleSetIsChecked() {
+    setIsChecked(!isChecked)
+  }
+
   return (
     <React.Fragment>
       <input
         type='checkbox'
         id={props.name}
         checked={isChecked}
-        onChange={() => setIsChecked(!isChecked)}
+        onChange={handleSetIsChecked}
       />
       <label htmlFor={props.name}>{props.name}</label>
     </React.Fragment>

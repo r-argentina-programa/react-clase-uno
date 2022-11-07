@@ -9,13 +9,17 @@
 export function ControlledCheckbox(props) {
   const [isChecked, setIsChecked] = React.useState(props.value)
 
+  function handleSetIsChecked() {
+    setIsChecked(!isChecked)
+  }
+
   return (
     <React.Fragment>
       <input
         type='checkbox'
         id={props.name}
         checked={isChecked}
-        onChange={() => setIsChecked(!isChecked)}
+        onChange={handleSetIsChecked}
       />
       <label htmlFor={props.name}>{props.name}</label>
     </React.Fragment>
@@ -46,6 +50,10 @@ export function ControlledCheckbox(props) {
 export function CheckboxListWithState(props) {
   const [isChecked, setIsChecked] = React.useState(props.items)
 
+  function handleSetIsChecked() {
+    setIsChecked({ ...isChecked, [key]: !value })
+  }
+
   return (
     <React.Fragment>
       {Object.entries(props.items).map(([name, value]) => (
@@ -53,7 +61,7 @@ export function CheckboxListWithState(props) {
           key={name}
           value={value}
           name={name}
-          onChange={() => setIsChecked({ ...isChecked, [key]: !value })}
+          onChange={handleSetIsChecked}
         />
       ))}
     </React.Fragment>

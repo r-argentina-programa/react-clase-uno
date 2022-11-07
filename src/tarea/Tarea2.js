@@ -15,12 +15,16 @@
 export function MatchNombre(props) {
   const [value, setValue] = React.useState('')
 
+  function handleSetValue(e) {
+    setValue(e.target.value)
+  }
+
   return (
     <input
       className={`input ${value === props.nombre ? 'input-match' : ''}`}
       value={value}
       nombre={props.nombre}
-      onChange={(event) => setValue(event.target.value)}
+      onChange={handleSetValue}
     />
   )
 }
@@ -46,6 +50,10 @@ export function MatchNombre(props) {
 export function PasswordInput(props) {
   const [value, setValue] = React.useState('')
 
+  function handleSetValue(e) {
+    setValue(e.target.value)
+  }
+
   return (
     <input
       type='password'
@@ -53,7 +61,7 @@ export function PasswordInput(props) {
         value.length >= props.minLength ? 'input-match' : ''
       }`}
       value={value}
-      onChange={(event) => setValue(event.target.value)}
+      onChange={handleSetValue}
     />
   )
 }
@@ -87,6 +95,10 @@ export function PasswordInput(props) {
 export function ValidationInput(props) {
   const [value, setValue] = React.useState('')
 
+  function handleSetValue(e) {
+    setValue(e.target.value)
+  }
+
   function validation(value) {
     if (props.isPassword && value.length >= props.minLength) {
       return true
@@ -110,7 +122,7 @@ export function ValidationInput(props) {
       type={props.isPassword ? 'password' : ''}
       className={`input ${validation(value) ? 'input-match' : ''}`}
       value={value}
-      onChange={(event) => setValue(event.target.value)}
+      onChange={handleSetValue}
     />
   )
 }
