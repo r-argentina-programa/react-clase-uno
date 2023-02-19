@@ -1,7 +1,14 @@
-const nombre = 'Julián';
+const nombre = "Valentin";
 
-const elemento = <div>Hola {nombre}</div>;
+const elemento = (
+  <input
+    onChange={(event) => {
+      console.log(event.target.value);
+    }}
+  />
+);
 
-const app = document.getElementById('react-app');
+const app = document.getElementById("react-app");
 
 ReactDOM.render(elemento, app);
+ 
