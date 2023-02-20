@@ -40,10 +40,10 @@ export function Tarjeta(props) {}
  * El esqueleto de este componente será nuestro primer post en un blog.
  * Ya tiene un esqueleto diseñado, por lo que hay que hacer solamente unos pequeños cambios:
  *
- * Reemplazar "Titulo de mi post" por una prop llamada "titulo" que venga desde arriba.
- * Reemplazar los tres párrafos de texto por una prop llamada "parrafos".
- * Esta prop será un string con saltos de texto para representar los diferentes párrafos.
- * Para hacer saltos de texto en un string común, pueden agregar \n donde los quieran agregar.
+ * 1)Reemplazar "Titulo de mi post" por una prop llamada "titulo" que venga desde arriba.
+ * 2)Reemplazar los tres párrafos de texto por una prop llamada "parrafos".
+ *  Esta prop será un string con saltos de texto para representar los diferentes párrafos.
+ *  Para hacer saltos de texto en un string común, pueden agregar \n donde los quieran agregar.
  * 
  * Ejemplo: "Hoy vi una ardilla.\nLa ardilla era negra."
  * 

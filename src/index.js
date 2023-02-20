@@ -15,7 +15,7 @@ ReactDOM.render(
   document.getElementById('react-app')
 );
 */
-/*
+
  import { Page } from './components/Page.js';
 
  ReactDOM.render(
@@ -28,12 +28,12 @@ ReactDOM.render(
    />,
    document.getElementById('react-app')
  );
- */
-
+ 
+/*
 import { LikeButton } from './components/LikeButton.js';
 
 ReactDOM.render(<LikeButton />, document.getElementById('react-app'));
-
+*/
 // import { ToDoList } from './components/ToDoList.js';
 
 // ReactDOM.render(<ToDoList />, document.getElementById('react-app'));

@@ -28,17 +28,6 @@ function Articles(props) {
   );
 }
 
-/*
-   <Page
-     titulo="Mi diario"
-     articulos={[
-       { titulo: 'Dia uno', cuerpo: 'Hoy vi una ardilla.' },
-       { titulo: 'Dia dos', cuerpo: 'Hoy vi otra ardilla, pero capaz sea la misma.' },
-     ]}
-   />,
-*/  
-
-
 export function Page(props) {
   return (
     <div className="main-page">
