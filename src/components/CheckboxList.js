@@ -1,6 +1,6 @@
-import UncontrolledCheckbox from './UncontrolledCheckbox';
+import UncontrolledCheckbox from "./UncontrolledCheckbox.js";
 
-export function CheckboxList(props) {
+function CheckboxList(props) {
   const { items } = props;
 
   return (
@@ -11,3 +11,5 @@ export function CheckboxList(props) {
     </div>
   );
 }
+
+export default CheckboxList;

@@ -69,7 +69,7 @@ const items = {
   uno: false,
   dos: true,
   tres: false,
-};
+}
 
 ReactDOM.render(
   <div>
@@ -79,9 +79,21 @@ ReactDOM.render(
   onChange={(newValue) => console.log(`Nuevo valor: ${newValue}`)}
 />
 <CheckboxList
-imtes = {items}
+items = {items}
 />
   </div>,
   document.getElementById("root")
+)
+*/
+
+import ControlledCheckboxList from "./components/CheckboxListWithState.js";
+/*
+ReactDOM.render(
+<ControlledCheckboxList items={{
+    uno: false,
+    dos: true,
+    tres: false,
+  }} />,
+  document.getElementById("root")  
 )
 */
