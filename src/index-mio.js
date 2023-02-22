@@ -25,14 +25,14 @@ ReactDOM.render(
 import MatchNombre from "./components/MatchNombre.js";
 import PasswordInput from "./components/PasswordInput.js";
 import ValidationInput from "./components/ValidationInput.js";
-
+/*
 const minLengthValidation = (value) => value.length >= 8;
 const noSpaceValidation = (value) => !value.match(" ");
 const emailValidation = (value) =>
   value.match(
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
-  
+
 ReactDOM.render(
   <div>
   <MatchNombre
@@ -60,4 +60,28 @@ ReactDOM.render(
   document.getElementById("root")
 
 )
-  
+*/
+
+import UncontrolledCheckbox from "./components/UncontrolledCheckbox.js";
+import  CheckboxList from "./components/CheckboxList.js";
+/*
+const items = {
+  uno: false,
+  dos: true,
+  tres: false,
+};
+
+ReactDOM.render(
+  <div>
+<UncontrolledCheckbox
+  initialValue={true}
+  name="Este es mi checkbox"
+  onChange={(newValue) => console.log(`Nuevo valor: ${newValue}`)}
+/>
+<CheckboxList
+imtes = {items}
+/>
+  </div>,
+  document.getElementById("root")
+)
+*/
