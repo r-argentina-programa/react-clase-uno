@@ -34,7 +34,7 @@
  * Si no quieren poner una foto suya, pueden tomar la URL de su imagen de perfil de github, como hice yo.
  */
 
-export function Tarjeta(props) {}
+export function Tarjeta(props) {z}
 
 /*
  * El esqueleto de este componente será nuestro primer post en un blog.
