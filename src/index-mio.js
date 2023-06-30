@@ -1,4 +1,5 @@
 // import { Tarjeta, BlogPost } from "./tarea/Tarea1.js";
+
 // ReactDOM.render(<Tarjeta
 //     nombre="Daniel Nikiforov"
 //     profesion="Programador"
@@ -19,7 +20,11 @@
 // />, document.getElementById("react-app"));
 
 
+
+
+
 // import { MatchNombre, PasswordInput, ValidationInput } from "./tarea/Tarea2.js";
+
 
 // ReactDOM.render(<MatchNombre nombre="Daniel"/>, document.getElementById('react-app'));
 
@@ -33,11 +38,14 @@
 //     />, document.getElementById('react-app'));
 
 
+
+
+
 // import { UncontrolledCheckbox, CheckboxList } from "./tarea/Tarea3.js";
 
-// ReactDOM.render(<UncontrolledCheckbox 
-//     name="This is a checkbox" 
-//     initialValue={false}/>, document.getElementById('react-app'));
+// // ReactDOM.render(<UncontrolledCheckbox 
+// //     name="This is a checkbox" 
+// //     initialValue={true}/>, document.getElementById('react-app'));
 
 // ReactDOM.render(<CheckboxList 
 //     items={{
@@ -46,3 +54,22 @@
 //         tres: false    
 //     }}/>, document.getElementById('react-app')
 // );
+
+
+
+
+
+// import { ControlledCheckbox, CheckboxListWithState } from "./tarea/Tarea4.js";
+
+// ReactDOM.render(<ControlledCheckbox 
+//     name="Controlled Checkbox" 
+//     value={true}
+//     onChange={() => alert("Cambió!")}/>, document.getElementById('react-app'));
+
+// ReactDOM.render(<CheckboxListWithState 
+//     items= {{
+//         uno: false,
+//         dos: true,
+//         tres: false,
+//     }}/>, document.getElementById('react-app'));
+
