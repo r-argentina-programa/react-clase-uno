@@ -10,15 +10,18 @@
  */
  
 export function UncontrolledCheckbox(props) {
-    const [selected, setSelected] = React.useState(false);
+    const [selected, setSelected] = React.useState(true);
     return (
+        <>
         <input 
             name={props.name}
             type="checkbox" 
-            value={props.initialValue}
-            onChange={(e) => setSelected(!selected)}
-            checked={selected}
-            />
+            onChange={() => setSelected(!selected)}
+            checked={selected && props.initialValue}
+            htmlFor={props.name}
+        />
+        <label htmlFor={props.name}>{props.name}</label>
+        </>
     );
 };
 
@@ -37,14 +40,14 @@ export function UncontrolledCheckbox(props) {
 
 export function CheckboxList(props) {
     return (
-        <div>
-            {Object.entries(props.items).map((item) => {
-                const [name, value] = item;
+        <fieldset>
+            {Object.entries(props.items).map((item) => 
                 <UncontrolledCheckbox
-                    name={name}
-                    initialValue={value}
+                    name={item[0]}
+                    initialValue={item[1]}
+                    key={item[0]}
                 />
-            })}
-        </div>
+            )}
+        </fieldset>
     );
 };
