@@ -32,3 +32,17 @@
 //     isPassword={false}
 //     />, document.getElementById('react-app'));
 
+
+// import { UncontrolledCheckbox, CheckboxList } from "./tarea/Tarea3.js";
+
+// ReactDOM.render(<UncontrolledCheckbox 
+//     name="This is a checkbox" 
+//     initialValue={false}/>, document.getElementById('react-app'));
+
+// ReactDOM.render(<CheckboxList 
+//     items={{
+//         uno: false,
+//         dos: true,
+//         tres: false    
+//     }}/>, document.getElementById('react-app')
+// );
