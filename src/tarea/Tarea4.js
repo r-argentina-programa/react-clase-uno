@@ -42,18 +42,18 @@ export function ControlledCheckbox(props) {
  */
 
 export function CheckboxListWithState(props) {
-    const [selectedItems, setSelectedItems] = React.useState(props.items)
+    const [checkboxes, setCheckboxes] = React.useState(props.items)
     const handleChange = (prop) => {
-        setSelectedItems({...selectedItems, [prop]: !selectedItems[prop]})
+        setCheckboxes({...checkboxes, [prop]: !checkboxes[prop]})
     };
     return (
         <fieldset>
-            {Object.entries(props.items).map((item, i) => 
+            {Object.entries(props.items).map(([name, value], i) => 
                 <ControlledCheckbox
-                    name={item[0]}
-                    value={selectedItems[item[0]]}
+                    name={name}
+                    value={selectedItems[value]}
                     onChange={(e) => handleChange(e.target.name)}
-                    key={item[0] + "-" + i}
+                    key={name + "-" + i}
                 />
             )};
         </fieldset>

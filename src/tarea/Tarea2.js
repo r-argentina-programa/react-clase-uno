@@ -85,6 +85,6 @@ export function ValidationInput(props) {
             type={props.isPassword ? 'password' : 'text'} 
             className={props.validation(value) ? 'input' : 'input input-match'}
             onChange={(e) => {setValue(e.target.value)}}
-            />
+        />
     );
 };

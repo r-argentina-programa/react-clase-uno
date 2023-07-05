@@ -41,11 +41,11 @@ export function UncontrolledCheckbox(props) {
 export function CheckboxList(props) {
     return (
         <fieldset>
-            {Object.entries(props.items).map((item) => 
+            {Object.entries(props.items).map(([key, value]) => 
                 <UncontrolledCheckbox
-                    name={item[0]}
-                    initialValue={item[1]}
-                    key={item[0]}
+                    name={key}
+                    initialValue={value}
+                    key={key}
                 />
             )}
         </fieldset>
